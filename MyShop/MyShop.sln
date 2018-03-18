@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyShop.Services", "MyShop.Services\MyShop.Services.csproj", "{CB18A3FF-D678-46DF-8322-5A660CED8F84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyShop.DataAccess.SQL", "MyShop.DataAccess.SQL\MyShop.DataAccess.SQL.csproj", "{B266A565-FBC7-4845-881E-8AFB7BF367D8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D9F44FA-B1BA-4677-A9B1-D9AA3F999F30} = {5D9F44FA-B1BA-4677-A9B1-D9AA3F999F30}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyShop.DataAccess.InMemory", "MyShop.DataAccess.InMemory\MyShop.DataAccess.InMemory.csproj", "{8A00A397-DC7B-4879-BC9C-33B7525B23DA}"
 EndProject
