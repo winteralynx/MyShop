@@ -23,7 +23,7 @@ namespace MyShop.WebUI.Controllers
         {
             //Get a list of products to return to our main page
             List<Product> products = context.Collection().ToList(); 
-            return View();
+            return View(products);
         }
 
         public ActionResult Details(string Id)
