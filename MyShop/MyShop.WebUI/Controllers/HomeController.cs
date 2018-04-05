@@ -1,4 +1,5 @@
 ﻿using MyShop.Core.Models;
+using MyShop.Core.ViewModels;
 using MyShop.DataAccess.InMemory;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,26 @@ namespace MyShop.WebUI.Controllers
             productCategories = productCategoryContext;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string Category=null)
         {
             //Get a list of products to return to our main page
-            List<Product> products = context.Collection().ToList(); 
-            return View(products);
+            List<Product> products;
+            List<ProductCategory> categories = productCategories.Collection().ToList(); 
+
+            if(Category == null)
+            {
+                products = context.Collection().ToList(); 
+            }
+            else
+            {
+                products = context.Collection().Where(p => p.Category == Category).ToList(); 
+            }
+
+            ProductListViewModel model = new ProductListViewModel();
+            model.Products = products;
+            model.ProductCategories = categories;
+
+            return View(model);
         }
 
         public ActionResult Details(string Id)
